@@ -8,7 +8,7 @@ public class Animal {
         if ("Травоядное".equals(animalKind)) {
             return List.of("Трава", "Различные растения");
         } else if ("Хищник".equals(animalKind)) {
-            return List.of("Животные", "Птицы", "Рыба");
+            return List.of("Животные", "Птицы", "Рыбы");
         } else {
             throw new Exception("Неизвестный вид животного, используйте значение Травоядное или Хищник");
         }
@@ -18,3 +18,4 @@ public class Animal {
         return "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
     }
 }
+
