@@ -10,22 +10,22 @@ import java.util.List;
 public class FelineTests {
 
     @Test
-    public void checkThatFelineEatsMeat() throws Exception {
-        Assert.assertEquals(List.of("Животные", "Птицы", "Рыбы"), new Feline().eatMeat());
+    public void checkThatFelineEatsMeatTest() throws Exception {
+        Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), new Feline().eatMeat());
     }
 
     @Test
-    public  void checkThatFelineGetFamily() {
+    public  void checkThatFelineGetFamilyTest() {
         Assert.assertEquals("Кошачьи", new Feline().getFamily());
     }
 
     @Test
-    public void checkCountOfKittensMoreWhenOne() {
+    public void checkCountOfKittensMoreWhenOneTest() {
         Assert.assertEquals(5, new Feline().getKittens(5));
     }
 
     @Test
-    public void checkCountOfKittensIsOne() {
+    public void checkCountOfKittensIsOneTest() {
         Feline feline = new Feline();
         Assert.assertEquals(feline.getKittens(1),feline.getKittens());
     }

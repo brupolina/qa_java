@@ -7,14 +7,14 @@ import java.util.List;
 
 public class LionTests {
     @Test
-    public void checkThatLionHasOneKitten() throws Exception {
+    public void checkThatLionHasOneKittenTest() throws Exception {
         Lion lion = new Lion(new Feline(), "Самка");
         Assert.assertEquals("У львов один детёныш", 1, lion.getKittens());
     }
 
     @Test
-    public void checkThatLionHasFoodLikeFeline() throws Exception {
+    public void checkThatLionHasFoodLikeFelineTest() throws Exception {
         Lion lion = new Lion(new Feline(), "Самец");
-        Assert.assertEquals(List.of("Животные", "Птицы", "Рыбы"), lion.getFood());
+        Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
     }
 }

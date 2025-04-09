@@ -4,9 +4,11 @@ import java.util.List;
 
 public class Lion {
 
-    boolean hasMane;
+    private boolean hasMane;
+    private Feline feline;
 
-    public Lion(String sex) throws Exception {
+    public Lion(Feline feline, String sex) throws Exception {
+        this.feline = feline;
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -16,9 +18,14 @@ public class Lion {
         }
     }
 
-    Feline feline = new Feline();
-
-    public Lion(Feline feline, String самец) {
+    public Lion(String sex) throws Exception {
+        if ("Самец".equals(sex)) {
+            hasMane = true;
+        } else if ("Самка".equals(sex)) {
+            hasMane = false;
+        } else {
+            throw new IllegalArgumentException("Используйте допустимые значения пола животного - самец или самка");
+        }
     }
 
     public int getKittens() {

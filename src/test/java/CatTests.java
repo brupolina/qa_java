@@ -15,16 +15,16 @@ public class CatTests {
     private Feline feline;
 
     @Test
-    public void checkThatCatHasFoodLikeFeline() throws Exception {
+    public void checkThatCatHasFoodLikeFelineTest() throws Exception {
         Cat cat = new Cat(feline);
         List<String> expectedFood = List.of("Мясо");
         Mockito.when(feline.eatMeat()).thenReturn(expectedFood);
-        Assert.assertEquals(expectedFood, cat.getFood());
+        Assert.assertEquals("Список еды для кошки должен совпадать со списком еды для Feline", expectedFood, cat.getFood());
     }
 
     @Test
-    public  void checkThatCatHasSoundMyo() {
+    public  void checkThatCatHasSoundMyoTest() {
         Cat cat = new Cat(feline);
-        Assert.assertEquals("Мяу", cat.getSound());
+        Assert.assertEquals("Звук кошки должен быть 'Мяу'", "Мяу", cat.getSound());
     }
 }
