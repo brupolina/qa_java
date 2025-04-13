@@ -17,7 +17,7 @@ public class CatTests {
     @Test
     public void checkThatCatHasFoodLikeFelineTest() throws Exception {
         Cat cat = new Cat(feline);
-        List<String> expectedFood = List.of("Мясо");
+        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.eatMeat()).thenReturn(expectedFood);
         Assert.assertEquals("Список еды для кошки должен совпадать со списком еды для Feline", expectedFood, cat.getFood());
     }

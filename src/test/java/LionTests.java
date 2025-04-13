@@ -17,4 +17,13 @@ public class LionTests {
         Lion lion = new Lion(new Feline(), "Самец");
         Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
     }
+
+    @Test
+    public void checkWhenLeonHasManeTest() throws Exception {
+        String expectedExceptionMessage = "Используйте допустимые значения пола животного - самец или самка";
+        Feline feline = new Feline();
+        @SuppressWarnings("unchecked")
+        Exception exception = Assert.assertThrows(Exception.class, () -> new Lion(feline,"Котенок"));
+        Assert.assertEquals(expectedExceptionMessage, exception.getMessage());
+    }
 }

@@ -13,7 +13,6 @@ public class LionParameterizedTest {
 
     private final String sex;
     private final boolean expectedHasMane;
-    private String expectedExceptionMessage = "Используйте допустимые значения пола животного - самец или самка";
 
     public LionParameterizedTest(String sex, boolean hasMane) {
         this.sex = sex;
@@ -24,22 +23,15 @@ public class LionParameterizedTest {
     public static Object[][] getData() {
         return new Object[][] {
                 {"Самец", true},
-                {"Самка", false},
-                {"Котенок", false} // Проверьте, как должен обрабатываться этот случай
+                {"Самка", false}
         };
     }
 
     @Test
-    public void checkWhenLeonHasMane() throws Exception {
-        if ("Котенок".equals(sex)) {
-            // Ожидается исключение для некорректного значения пола
-            @SuppressWarnings("unchecked")
-            Exception exception = Assert.assertThrows(Exception.class, () -> new Lion(sex));
-            Assert.assertEquals(expectedExceptionMessage, exception.getMessage());
-        } else {
-            Lion lion = new Lion(sex); // Предполагаем, что в конструкторе Lion передаётся только пол
-            boolean actualHasMane = lion.doesHaveMane();
-            Assert.assertEquals(expectedHasMane, actualHasMane);
-        }
+    public void checkWhenLeonHasManeTest() throws Exception {
+        Feline feline = new Feline();
+        Lion lion = new Lion(feline, sex); // Предполагаем, что в конструкторе Lion передаётся только пол
+        boolean actualHasMane = lion.doesHaveMane();
+        Assert.assertEquals(expectedHasMane, actualHasMane);
     }
 }
